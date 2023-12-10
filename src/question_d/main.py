@@ -2,9 +2,9 @@ from question_d import Stock
 
 stockListView = Stock("MSFT", "Microsoft")
 
-stockListView.get_stock_list()
+print(stockListView.get_stock_list()) 
 
-'''def menu():
+def menu():
     print("1- Display stock purchase history ")
     print("2- Exit ")
 
@@ -13,8 +13,9 @@ option = int(input("Please enter a number: "))
 
 while option != 2:
     if(option == 1):
-        question_d.get_stock_list('stocklist.txt', 'r')
-        exitProgram = input("If you want to quit, type yes. If not type something else: ")
+        returnStockList = stockListView.get_stock_list()
+        print(returnStockList)
+        exitProgram = input("Type yes to quit. If not type something else: ")
         if(exitProgram.upper() == "YES"):
             break
     else:
@@ -24,4 +25,5 @@ while option != 2:
     menu()
     option = int(input("Enter your option: "))
 
-print("You have terminated the program. ")'''
+print("You have terminated the program. ")
+exit()

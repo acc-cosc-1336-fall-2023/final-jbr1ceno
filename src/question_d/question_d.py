@@ -16,21 +16,19 @@ class Stock:
 
     def get_stock_list(self):
         
+        stockDict = {}
+
         in_file = open(self.__file_name, 'r')
 
-        file_contents = in_file.read()
-
-        '''while(line != ''):
-            print(file_contents)
-            file_contents = in_file.readline()'''
+        #file_contents = in_file.read()
+        for line in in_file:
+            stockers = line.rstrip('\n').split(' ')
+            symbol = stockers[0]
+            company_name = stockers[1]
+            stockDict[symbol] = company_name
 
 
         in_file.close()
-
-        print(file_contents)
-
-
-
-    '''def __init__(self, symbol, company_name): #constructor
-        self.__symbol = str(symbol)
-        self.__company_name = str(company_name)'''
+    
+        #print(file_contents)
+        return(stockDict)
